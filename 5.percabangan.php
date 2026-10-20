@@ -19,7 +19,7 @@
         } else {
             $predikat = "D (Perlu belajar lagi)";
         }
-        echo "Jika Nilai = $nilai -> Predikat: <strong>$predikat</strong><br>";
+        echo "Jika Nilai = $nilai -> Predikat: $predikat<br>";
 
         $total_belanja = random_int(75000,250000); 
 
@@ -42,7 +42,6 @@
         echo "Diskon (" . ($persen_diskon * 100) . "%) : Rp$diskon <br>";
         echo "Terbayar  : Rp$bayar <br><br>";
 
-        echo "<b>// Contoh switch Hari:</b><br>";
         $hari = "Rabu";
         switch ($hari) {
             case "Senin":
