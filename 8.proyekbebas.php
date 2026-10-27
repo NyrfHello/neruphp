@@ -44,7 +44,7 @@ while (true) {
         $max = $yoo - 1;
     } 
     else {
-        echo "&lt;h2&gt;🎉 SAYA BENAR! :D (Ditemukan dalam $langkah tebakan)&lt;/h2&gt;&lt;br&gt;";
+        echo "&lt;h2&gt;SAYA BENAR! :D (Ditemukan dalam $langkah tebakan)&lt;/h2&gt;&lt;br&gt;";
         break;
     }
 }
@@ -76,7 +76,7 @@ while (true) {
                             $max = $yoo - 1;
                         } 
                         else {
-                            echo "<h2>🎉 SAYA BENAR! :D (Ditemukan dalam $langkah tebakan)</h2><br>";
+                            echo "<h2>SAYA BENAR! :D (Ditemukan dalam $langkah tebakan)</h2><br>";
                             break;
                         }
                     }
