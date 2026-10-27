@@ -1,53 +1,39 @@
-function toggleCode() {
-    var codeSec = document.getElementById("codeSection");
-    var btn = document.querySelector(".btn-toggle-code");
-    if (!codeSec) return;
-    if (codeSec.style.display === "none" || codeSec.style.display === "") {
-        codeSec.style.display = "block";
-        if (btn) btn.innerHTML = "✕ Tutup Kode";
+function togglecode() {
+    var kotak = document.getElementById("codebox");
+    var tombol = document.getElementById("codebutton");
+
+    if (kotak.style.display == "none" || kotak.style.display == "") {
+        kotak.style.display = "block";
+        tombol.innerHTML = "✕ close code";
     } else {
-        codeSec.style.display = "none";
-        if (btn) btn.innerHTML = "👁 Lihat Kode";
+        kotak.style.display = "none";
+        tombol.innerHTML = "👁 view code";
     }
 }
 
-function refreshCode(event) {
-    if (event) event.preventDefault();
-    var refreshBtn = document.querySelector(".go-refresh");
-    var screen = document.querySelector(".php-inside-screen");
-    
-    if (refreshBtn) refreshBtn.classList.add("spinning");
-    if (screen) screen.style.opacity = "0.4";
+function refreshcode() {
+    var tombol = document.getElementById("refreshbutton");
+    var layar = document.getElementById("whitescreen");
 
-    var url = window.location.pathname + "?_t=" + Date.now();
-    fetch(url)
-        .then(function(res) {
-            return res.text();
+    if (tombol) {
+        tombol.classList.add("spin");
+    }
+
+    fetch(window.location.href)
+        .then(function(respon) {
+            return respon.text();
         })
         .then(function(html) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(html, "text/html");
-            var newScreen = doc.querySelector(".php-inside-screen");
-            if (newScreen && screen) {
-                screen.innerHTML = newScreen.innerHTML;
-            }
+            var div = document.createElement("div");
+            div.innerHTML = html;
+            var isibaru = div.querySelector("#whitescreen").innerHTML;
+            layar.innerHTML = isibaru;
+
+            setTimeout(function() {
+                if (tombol) tombol.classList.remove("spin");
+            }, 300);
         })
         .catch(function(err) {
-            console.error("Gagal refresh kode:", err);
-        })
-        .finally(function() {
-            if (screen) screen.style.opacity = "1";
-            if (refreshBtn) {
-                setTimeout(function() {
-                    refreshBtn.classList.remove("spinning");
-                }, 400);
-            }
+            alert("error refresh");
         });
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    var refreshBtn = document.querySelector(".go-refresh");
-    if (refreshBtn) {
-        refreshBtn.addEventListener("click", refreshCode);
-    }
-});

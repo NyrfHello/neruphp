@@ -8,19 +8,19 @@
 </head>
 <body>
 
-    <a href="index.html" class="go-home-x" title="Kembali ke Homepage">X</a>
-    <a href="javascript:void(0)" class="go-refresh" title="Muat Ulang Kode">↻</a>
+    <a href="index.html" class="xbutton" title="Back">X</a>
+    <a href="javascript:void(0)" onclick="refreshcode()" id="refreshbutton" class="refreshbutton" title="Refresh">↻</a>
 
-    <div class="php-middle-wrapper">
-        <div class="blue-php-box">
-            <div class="box-header">
-                <h2 class="box-title">2. Variabel</h2>
-                <button type="button" class="btn-toggle-code" onclick="toggleCode()">👁 Lihat Kode</button>
+    <div class="middlebox">
+        <div class="bluebox">
+            <div class="boxhead">
+                <h2 class="boxtitle">2. Variabel</h2>
+                <button type="button" id="codebutton" class="codebutton" onclick="togglecode()">👁 view code</button>
             </div>
 
-            <div id="codeSection" class="code-view-box" style="display: none;">
-                <div class="code-title-bar">Source Code (PHP)</div>
-                <pre class="code-content"><code>&lt;?php
+            <div id="codebox" class="codebox" style="display: none;">
+                <div class="codetitle">Source Code (PHP)</div>
+                <pre class="codetext"><code>&lt;?php
 $nama    = "Nell";
 $umur    = 17;
 $sekolah = "MIT";
@@ -46,8 +46,8 @@ echo "Kekayaan : $kekayaan :p &lt;br&gt;";
 ?&gt;</code></pre>
             </div>
 
-            <div class="php-inside-screen">
-                <?php 
+            <div id="whitescreen" class="whitescreen">
+                <?php
                     $nama    = "Nell";
                     $umur    = 17;
                     $sekolah = "MIT";

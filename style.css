@@ -15,7 +15,7 @@
     100% { background-color: #ff4d4d; }
 }
 
-@keyframes button-rainbow {
+@keyframes rainbowbutton {
     0%   { background-color: #ff4d4d; }
     16%  { background-color: #ff9933; }
     33%  { background-color: #ffff4d; }
@@ -100,7 +100,7 @@ body {
     border-radius: 10px;
     box-shadow: 4px 4px 0px #000000;
     transition: transform 0.1s, box-shadow 0.1s;
-    animation: button-rainbow 3s linear infinite;
+    animation: rainbowbutton 3s linear infinite;
 }
 
 .holybutton:nth-child(1) { animation-delay: 0.0s; }
@@ -113,7 +113,7 @@ body {
 .holybutton:nth-child(8) { animation-delay: -2.8s; }
 
 .holybutton:hover {
-    animation: button-rainbow 0.3s linear infinite;
+    animation: rainbowbutton 0.3s linear infinite;
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px #000000;
 }
@@ -137,7 +137,7 @@ body {
     display: block;
 }
 
-.go-home-x {
+.xbutton {
     position: fixed;
     top: 25px;
     left: 25px;
@@ -158,13 +158,13 @@ body {
     z-index: 100;
 }
 
-.go-home-x:hover {
+.xbutton:hover {
     background-color: #ff0000;
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px #000000;
 }
 
-.go-refresh {
+.refreshbutton {
     position: fixed;
     top: 25px;
     right: 25px;
@@ -186,22 +186,22 @@ body {
     cursor: pointer;
 }
 
-.go-refresh:hover {
+.refreshbutton:hover {
     background-color: #33cc33;
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px #000000;
 }
 
-@keyframes refresh-spin {
+@keyframes spin {
     0%   { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-.go-refresh.spinning {
-    animation: refresh-spin 0.4s ease-in-out;
+.refreshbutton.spin {
+    animation: spin 0.4s ease-in-out;
 }
 
-.php-middle-wrapper {
+.middlebox {
     width: 100%;
     max-width: 700px;
     margin: auto;
@@ -210,7 +210,7 @@ body {
     gap: 20px;
 }
 
-.blue-php-box {
+.bluebox {
     background-color: #d9d9d9;
     border: 4px solid #000000;
     border-radius: 20px;
@@ -220,7 +220,7 @@ body {
     font-size: 18px;
 }
 
-.box-header {
+.boxhead {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -230,13 +230,13 @@ body {
     gap: 15px;
 }
 
-.box-title {
+.boxtitle {
     margin: 0;
     font-size: 24px;
     color: #000000;
 }
 
-.btn-toggle-code {
+.codebutton {
     background-color: #ffff4d;
     color: #000000;
     font-size: 15px;
@@ -249,13 +249,13 @@ body {
     transition: transform 0.1s, box-shadow 0.1s;
 }
 
-.btn-toggle-code:hover {
+.codebutton:hover {
     background-color: #ffe600;
     transform: translate(2px, 2px);
     box-shadow: 1px 1px 0px #000000;
 }
 
-.code-view-box {
+.codebox {
     background-color: #242424;
     color: #a6e22e;
     border: 3px solid #000000;
@@ -265,7 +265,7 @@ body {
     box-shadow: 5px 5px 0px #000000;
 }
 
-.code-title-bar {
+.codetitle {
     font-size: 13px;
     font-weight: bold;
     color: #ffffff;
@@ -274,7 +274,7 @@ body {
     border-bottom: 1px dashed #666;
 }
 
-.code-content {
+.codetext {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace !important;
@@ -286,11 +286,11 @@ body {
     color: #a6e22e;
 }
 
-.code-content code {
+.codetext code {
     font-family: 'Courier New', Courier, monospace !important;
 }
 
-.php-inside-screen {
+.whitescreen {
     background-color: #ffffff;
     border: 3px solid #000000;
     border-radius: 12px;
@@ -304,29 +304,29 @@ body {
 }
 
 @media (max-width: 650px) {
-    .go-home-x, .go-refresh {
+    .xbutton, .refreshbutton {
         width: 48px;
         height: 48px;
         font-size: 24px;
         top: 15px;
     }
-    .go-home-x { left: 15px; }
-    .go-refresh { right: 15px; }
-    .php-middle-wrapper {
+    .xbutton { left: 15px; }
+    .refreshbutton { right: 15px; }
+    .middlebox {
         margin-top: 75px;
     }
-    .box-header {
+    .boxhead {
         flex-direction: column;
         align-items: flex-start;
     }
-    .btn-toggle-code {
+    .codebutton {
         align-self: flex-end;
     }
 }
 
-.php-inside-screen input, 
-.php-inside-screen select, 
-.php-inside-screen button {
+.whitescreen input, 
+.whitescreen select, 
+.whitescreen button {
     padding: 8px 12px;
     margin: 5px 0;
     border: 3px solid #000000;
@@ -336,7 +336,7 @@ body {
     box-shadow: 3px 3px 0px #000000;
 }
 
-.green-refresh-thingy {
+.greenbutton {
     display: block;
     width: 100%;
     background-color: #66ff66;
@@ -352,8 +352,8 @@ body {
     transition: transform 0.1s, box-shadow 0.1s;
 }
 
-.green-refresh-thingy:hover {
-    animation: button-rainbow 0.3s linear infinite;
+.greenbutton:hover {
+    animation: rainbowbutton 0.3s linear infinite;
     transform: translate(2px, 2px);
     box-shadow: 4px 4px 0px #000000;
 }
