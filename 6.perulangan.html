@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Perulangan - triofonder.fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="index.html" class="xbutton" title="Back">X</a>
+    <a href="javascript:void(0)" onclick="refreshcode()" id="refreshbutton" class="refreshbutton" title="Refresh">↻</a>
+
+    <div class="middlebox">
+        <div class="bluebox">
+            <div class="boxhead">
+                <h2 class="boxtitle">6. Perulangan</h2>
+                <button type="button" id="codebutton" class="codebutton" onclick="togglecode()">👁 view code</button>
+            </div>
+
+            <div id="codebox" class="codebox" style="display: none;">
+                <div class="codetitle">Source Code (PHP)</div>
+                <pre class="codetext"><code>&lt;?php
+for ($i = 1; $i &lt;= 10; $i++) {
+    $hasil = 7 * $i;
+    echo "7 x $i = $hasil &lt;br&gt;";
+}
+echo "&lt;br&gt;";
+
+$n = 5;
+while ($n &gt; 0) {
+    echo "$n ";
+    $n--;
+}
+
+echo "Mulai! :D &lt;br&gt;&lt;br&gt;";
+$keranjang = ["Indomie", "Teh Pucuk", "Kopi", "Roti", "Susu Kotak"];
+$no = 1;
+foreach ($keranjang as $barang) {
+    echo "$no. $barang &lt;br&gt;";
+    $no++;
+}
+echo "&lt;br&gt;";
+
+foreach (range(1, 10) as $angka) {
+    echo "$angka ";
+}
+echo "&lt;br&gt;&lt;br&gt;";
+?&gt;</code></pre>
+            </div>
+
+            <div id="whitescreen" class="whitescreen">
+7 x 1 = 7 <br>
+7 x 2 = 14 <br>
+7 x 3 = 21 <br>
+7 x 4 = 28 <br>
+7 x 5 = 35 <br>
+7 x 6 = 42 <br>
+7 x 7 = 49 <br>
+7 x 8 = 56 <br>
+7 x 9 = 63 <br>
+7 x 10 = 70 <br><br>
+5 4 3 2 1 Mulai! :D <br><br>
+1. Indomie <br>
+2. Teh Pucuk <br>
+3. Kopi <br>
+4. Roti <br>
+5. Susu Kotak <br><br>
+1 2 3 4 5 6 7 8 9 10 <br><br>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

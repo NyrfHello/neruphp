@@ -13,10 +13,16 @@ function togglecode() {
 
 function refreshcode() {
     var tombol = document.getElementById("refreshbutton");
-    var layar = document.getElementById("whitescreen");
-
     if (tombol) {
         tombol.classList.add("spin");
+    }
+
+    if (typeof dorandom === "function") {
+        dorandom();
+        setTimeout(function() {
+            if (tombol) tombol.classList.remove("spin");
+        }, 300);
+        return;
     }
 
     fetch(window.location.href)
@@ -27,13 +33,14 @@ function refreshcode() {
             var div = document.createElement("div");
             div.innerHTML = html;
             var isibaru = div.querySelector("#whitescreen").innerHTML;
-            layar.innerHTML = isibaru;
-
+            document.getElementById("whitescreen").innerHTML = isibaru;
             setTimeout(function() {
                 if (tombol) tombol.classList.remove("spin");
             }, 300);
         })
         .catch(function(err) {
-            alert("error refresh");
+            setTimeout(function() {
+                if (tombol) tombol.classList.remove("spin");
+            }, 300);
         });
 }

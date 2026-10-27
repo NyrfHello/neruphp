@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Halo Dunia - triofonder.fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="index.html" class="xbutton" title="Back">X</a>
+    <a href="javascript:void(0)" onclick="refreshcode()" id="refreshbutton" class="refreshbutton" title="Refresh">↻</a>
+
+    <div class="middlebox">
+        <div class="bluebox">
+            <div class="boxhead">
+                <h2 class="boxtitle">1. Halo Dunia</h2>
+                <button type="button" id="codebutton" class="codebutton" onclick="togglecode()">👁 view code</button>
+            </div>
+
+            <div id="codebox" class="codebox" style="display: none;">
+                <div class="codetitle">Source Code (PHP)</div>
+                <pre class="codetext"><code>&lt;?php
+$world = "Hello, World";
+$nell = str_replace("World", "Nell", $world); 
+echo $nell . "&lt;br&gt;";
+echo "Halo, aku Nell! :D &lt;br&gt;";
+echo "Cita-cita : Menjadi Software Engineer ^_^ &lt;br&gt;";
+
+$hitung = 10 * 5;
+echo "Hasil 10 * 5 = " . $hitung . "&lt;br&gt;";
+?&gt;</code></pre>
+            </div>
+
+            <div id="whitescreen" class="whitescreen">
+Hello, Nell<br>
+Halo, aku Nell! :D <br>
+Cita-cita : Menjadi Software Engineer ^_^ <br>
+Hasil 10 * 5 = 50<br>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
